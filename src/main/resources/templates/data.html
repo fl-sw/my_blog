@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DATA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript"   th:src="@{/javascript/first.js}"></script>
+</head>
+
+<body>
+<div th:fragment="data">
+    <div th:each="nounEntry,itemStat: ${nounEntries}" >
+        <div id="nddd_button" th:id="'nddd_button'+${itemStat.index}" class="button_div" th:type="button" onclick="change(this.id)">
+            <div class="noun_card" id="n">
+                <div>
+                    <h4 ><b th:text="${nounEntry.noun}"></b></h4>
+                </div>
+                <div class="dropdown_card">
+                    <button class="dropbtn_card"></button>
+                    <div class="dropdown-content_card">
+                        <form action="/deleteNounEntry">
+                            <input name="noun" type="text" th:value="${nounEntry.noun}" style="display: none">
+                            <input type="submit" value="删除" class="submit submit_ud">
+                        </form>
+                        <form action="/update">
+                            <input name="noun" type="text" th:value="${nounEntry.noun}" style="display: none">
+                            <input type="submit" value="更新" class="submit submit_ud">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="ddd" th:id="'ddd'+${itemStat.index}" style="display: none" class="ddd_card" >
+                <p  th:text="${nounEntry.detail}"></p><hr class="hr-two">
+                <p  th:text="${nounEntry.definition}"><hr class="hr-two">
+                <p  th:text="${nounEntry.definition_CH}">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

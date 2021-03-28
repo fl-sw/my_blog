@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:margin="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/insert.css}" href="../static/css/insert.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/start.css}" href="../static/css/start.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div>
+    <div class="search_form">
+        <div class="insert_container">
+            <form action="updateNounEntry" method="post">
+                <label for="noun">名词</label>
+                <input class="insert_input" type="text" id="noun" name="noun" placeholder="请输入名词.." required="required" th:value="${nounEntry.noun}">
+
+                <label for="detail">全称</label>
+                <input class="insert_input" type="text" id="detail" name="detail" placeholder="请输入全称.." th:value="${nounEntry.detail}">
+
+                <label for="definition">英文释义</label>
+                <textarea class="insert_textarea" id="definition" name="definition" placeholder="英文释义.." th:text="${nounEntry.definition}"></textarea>
+
+                <label for="definition_CH">中文释义</label>
+                <textarea class="insert_textarea" id="definition_CH" name="definition_CH" placeholder="中文释义.." th:text="${nounEntry.definition_CH}"></textarea>
+
+                <div style="margin: auto">
+                    <input class="insert_submit" type="submit" value="提交">
+                </div>
+            </form>
+            <a href="/start"><button class="insert_submit">取消</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

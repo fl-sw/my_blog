@@ -1,0 +1,106 @@
+/***********词条框************/
+.button_div {
+    align-self: center;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    border-radius: 6px;
+    margin: 6px auto;
+    background-color: #f0f0f4;
+
+}
+.button_div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.noun_card {
+    padding: 1px 100px;
+    height: 50px;
+}
+.ddd_card{
+    padding: 5px 60px;
+}
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.thumbnailT
+{
+    float: left;
+    width: 80px;
+    height: 38px;
+    margin: 1px;
+    right: 500px
+}
+
+/*下箭头*/
+
+.dropbtn_card {
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: url("../images/point3.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    padding: 16px;
+    z-index: 2;
+}
+
+.dropdown_card {
+    position: relative;
+    display: inline-block;
+    top: -42px;
+    left: 90%;
+}
+
+.dropdown-content_card {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    /*min-width: 160px;*/
+    width: fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content_card a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+}
+
+.dropdown-content_card a:hover {background-color: #f1f1f1}
+
+.dropdown_card:hover .dropdown-content_card {
+    display: block;
+}
+
+.dropdown_card:hover .dropbtn_card {
+    background-color: #8e8386;
+}
+
+
+/*提交按钮的样式（删除&更新）*/
+.submit {
+    background-color: #ffbabe;
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.submit_ud {
+    background-color: white;
+    color: black;
+}
+
+.submit_ud:hover {
+    background-color: rgba(27, 35, 36, 0.21);
+    color: white;
+}

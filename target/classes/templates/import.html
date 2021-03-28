@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="/csvImport" id="csvFile" method="POST" enctype="multipart/form-data">
+    <input type="file" name="csvFile" value="选择文件">
+    <input type="submit" value="提交">
+</form>
+<br/>
+<br/>
+<a href="/start"><button>返回</button></a>
+</body>
+</html>

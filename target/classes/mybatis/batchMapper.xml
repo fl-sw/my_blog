@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.flsw.mapper.BatchMapper">
+
+    <insert id="batchInsert" parameterType="List">
+        insert into nqs (noun,detail,definition,definition_CH) values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.noun},#{item.detail},#{item.definition},#{item.definition_CH})
+        </foreach>
+    </insert>
+
+    <!--测试时使用的-->
+    <delete id="batchDelete" parameterType="String">
+        delete from nqs where noun like #{word}
+    </delete>
+
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.flsw.mapper.NounEntryMapper">
+
+    <select id="findAllEntries" resultType="xyz.flsw.model.NounEntry">
+        select * from nqs
+    </select>
+
+    <select id="findEntryByNoun" parameterType="String"  resultType="xyz.flsw.model.NounEntry">
+        select * from nqs where noun=#{noun}
+    </select>
+
+    <select id="findEntriesByNounFuzzy" parameterType="String" resultType="xyz.flsw.model.NounEntry">
+        select * from nqs where noun like #{word}
+    </select>
+
+    <update id="updateNounEntry" parameterType="xyz.flsw.model.NounEntry">
+        update nqs set noun=#{noun},detail=#{detail},definition=#{definition},definition_CH=#{definition_CH} where noun=#{noun};
+    </update>
+
+    <delete id="deleteNounEntry" parameterType="String">
+        delete from nqs where noun=#{noun}
+    </delete>
+
+    <insert id="insertNounEntry" parameterType="xyz.flsw.model.NounEntry">
+        insert into nqs (noun,detail,definition,definition_CH) values (#{noun},#{detail},#{definition},#{definition_CH});
+    </insert>
+
+
+</mapper>
+
+
+
